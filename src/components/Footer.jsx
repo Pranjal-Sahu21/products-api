@@ -3,9 +3,9 @@ import { Twitter, Github, Linkedin, Youtube, Instagram } from "lucide-react";
 const Footer = () => {
   return (
     <div
-      className="bg-black pt-20 bg-[radial-gradient(rgba(166,255,93,0.15)_1.5px,transparent_0)]
-        bg-size-[20px_20px]
-        bg-position-[-1px_-1px]"
+      className="bg-black pt-20 border border-black bg-[radial-gradient(rgba(255,96,68,0.15)_1.5px,transparent_0)]
+      bg-size-[20px_20px]
+      bg-position-[-1px_-1px]"
     >
       <footer className="bg-[#111112] w-full mx-auto text-white pt-8 lg:pt-12 px-4 sm:px-8 md:px-16 lg:px-28 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-6 gap-8 md:gap-12">
@@ -15,7 +15,8 @@ const Footer = () => {
               DummiStore <span className="italic text-[#ff6044]">API</span>
             </a>
             <p className="text-sm text-neutral-400 max-w-96">
-              Fast and free api to help developers test ecommerce websites without authentication.
+              Fast and free api to help developers test ecommerce websites
+              without authentication.
             </p>
 
             {/* Social Icons */}
