@@ -24,18 +24,13 @@ const Navbar = () => {
         flex flex-col md:flex-row items-center justify-center
         md:justify-start gap-8 text-xl md:text-sm transition-all duration-300
         
-        ${menuOpen ? "w-full" : "w-0 md:w-auto overflow-hidden"}`}
+        ${menuOpen ? "w-full bg-black/95" : "w-0 md:w-auto overflow-hidden"}`}
       >
         <a className="hover:text-[#ff6044] cursor-pointer">Products</a>
         <a className="hover:text-[#ff6044] cursor-pointer">Examples</a>
         <a className="hover:text-[#ff6044] cursor-pointer">Docs</a>
         <a className="hover:text-[#ff6044] cursor-pointer">Github</a>
       </div>
-
-      {/* Desktop Button */}
-      <button className="hidden md:block bg-[#ff6044] hover:opacity-90 text-black px-6 py-2.5 rounded-full text-sm transition">
-        Contact
-      </button>
 
       {/* Mobile Menu Button */}
       <button

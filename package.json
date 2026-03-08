@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
+    "animated-backgrounds": "^2.0.0",
+    "animated-grid-lines": "^1.0.2",
+    "framer-motion": "^12.35.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwindcss": "^4.2.1"

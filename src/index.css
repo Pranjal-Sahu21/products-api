@@ -5,6 +5,13 @@
   font-family: "Poppins", sans-serif;
 }
 
+@layer base {
+  ::selection {
+    background: #ff6044;
+    color: #121313;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -20,4 +27,36 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #ff7a61;
+}
+
+.cyber-pattern {
+  width: 100%;
+  height: 100%;
+  background-color: #050505;
+
+  background-image:
+    radial-gradient(circle at center, transparent 30%, #000 90%),
+    linear-gradient(rgba(255, 96, 68, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 96, 68, 0.12) 1px, transparent 1px),
+    linear-gradient(rgba(255, 96, 68, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 96, 68, 0.05) 1px, transparent 1px);
+
+  background-size:
+    100% 100%,
+    60px 60px,
+    60px 60px,
+    20px 20px,
+    20px 20px;
+
+  animation: cyber-move 12s linear infinite;
+}
+
+@keyframes cyber-move {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+
+  100% {
+    background-position: 0 0, 60px 60px, 60px 60px, 40px 40px, 40px 40px;
+  }
 }
