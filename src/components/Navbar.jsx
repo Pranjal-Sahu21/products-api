@@ -13,7 +13,7 @@ const Navbar = () => {
       shadow-lg text-white"
     >
       {/* Logo */}
-      <h1 className="text-md md:text-xl tracking-wide">
+      <h1 className="text-xl tracking-wide">
         DummiStore <span className="text-[#ff6044] italic">API</span>
       </h1>
 
