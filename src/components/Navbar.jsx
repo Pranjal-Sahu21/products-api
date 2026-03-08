@@ -26,7 +26,16 @@ const Navbar = () => {
         
         ${menuOpen ? "w-full bg-black/95" : "w-0 md:w-auto overflow-hidden"}`}
       >
-        <a className="hover:text-[#ff6044] cursor-pointer">Products</a>
+        <a
+          onClick={() => {
+            document
+              .getElementById("products")
+              .scrollIntoView({ behavior: "smooth" });
+          }}
+          className="hover:text-[#ff6044] cursor-pointer"
+        >
+          Products
+        </a>
         <a className="hover:text-[#ff6044] cursor-pointer">Examples</a>
         <a className="hover:text-[#ff6044] cursor-pointer">Docs</a>
         <a className="hover:text-[#ff6044] cursor-pointer">Github</a>
