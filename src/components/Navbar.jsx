@@ -13,14 +13,14 @@ const Navbar = () => {
       shadow-lg text-white"
     >
       {/* Logo */}
-      <h1 className="text-xl tracking-wide">
+      <h1 className="text-md md:text-xl tracking-wide">
         DummiStore <span className="text-[#ff6044] italic">API</span>
       </h1>
 
       {/* MENU */}
       <div
         className={`absolute md:static top-0 left-0 h-screen md:h-auto
-        bg-[#121313]/90 backdrop-blur-2xl
+        bg-[#121313]/90 backdrop-blur-2xl md:bg-transparent
         flex flex-col md:flex-row items-center justify-center
         md:justify-start gap-8 text-xl md:text-sm transition-all duration-300
         
@@ -28,6 +28,7 @@ const Navbar = () => {
       >
         <a
           onClick={() => {
+            setMenuOpen(false);
             document
               .getElementById("products")
               .scrollIntoView({ behavior: "smooth" });
@@ -36,9 +37,19 @@ const Navbar = () => {
         >
           Products
         </a>
-        <a className="hover:text-[#ff6044] cursor-pointer">Examples</a>
         <a className="hover:text-[#ff6044] cursor-pointer">Docs</a>
         <a className="hover:text-[#ff6044] cursor-pointer">Github</a>
+        <a
+          onClick={() => {
+            setMenuOpen(false);
+            document
+              .getElementById("faq")
+              .scrollIntoView({ behavior: "smooth" });
+          }}
+          className="hover:text-[#ff6044] cursor-pointer"
+        >
+          FAQs
+        </a>
       </div>
 
       {/* Mobile Menu Button */}

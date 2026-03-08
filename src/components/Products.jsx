@@ -46,7 +46,7 @@ export default function Products() {
       </h2>
 
       <p className="text-white/50 text-sm max-w-md mx-auto mt-4 mb-10 text-center">
-        Preview some of the products available from our API.
+        See some of the products in our API
       </p>
       <ThreeDMarquee images={images} />
     </section>
