@@ -7,7 +7,7 @@ const Footer = () => {
       bg-size-[20px_20px]
       bg-position-[-1px_-1px]"
     >
-      <footer className="bg-[#111112] w-full mx-auto text-white pt-8 lg:pt-12 px-4 sm:px-8 md:px-16 lg:px-28 overflow-hidden">
+      <footer className="bg-[#0e0d0d] w-full mx-auto text-white pt-8 lg:pt-12 px-4 sm:px-8 md:px-16 lg:px-28 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-6 gap-8 md:gap-12">
           {/* Logo & Description */}
           <div className="lg:col-span-3 space-y-6">

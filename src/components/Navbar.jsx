@@ -22,10 +22,21 @@ const Navbar = () => {
         className={`absolute md:static top-0 left-0 h-screen md:h-auto
         bg-[#121313]/90 backdrop-blur-2xl md:bg-transparent
         flex flex-col md:flex-row items-center justify-center
-        md:justify-start gap-8 text-xl md:text-sm transition-all duration-300
+        md:justify-start gap-8 text-2xl md:text-sm transition-all duration-300
         
         ${menuOpen ? "w-full bg-black/95" : "w-0 md:w-auto overflow-hidden"}`}
       >
+        <a
+          onClick={() => {
+            setMenuOpen(false);
+            document
+              .getElementById("features")
+              .scrollIntoView({ behavior: "smooth" });
+          }}
+          className="hover:text-[#ff6044] cursor-pointer"
+        >
+          Features
+        </a>
         <a
           onClick={() => {
             setMenuOpen(false);

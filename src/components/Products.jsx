@@ -45,7 +45,7 @@ export default function Products() {
         Products You’ll <span className="text-[#ff6044] italic">Get</span>
       </h2>
 
-      <p className="text-white/50 text-sm max-w-md mx-auto mt-4 mb-10 text-center">
+      <p className="text-white/50 text-sm max-w-md mx-auto mt-4 mb-16 text-center">
         See some of the products in our API
       </p>
       <ThreeDMarquee images={images} />
