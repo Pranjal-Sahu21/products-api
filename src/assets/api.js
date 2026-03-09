@@ -1,5 +1,5 @@
 
-
+//JSON structure
 [
     {
         "id": 1,
@@ -7,7 +7,7 @@
         "price": 21.00,
         "description": "Item description",
         "category": "Item category",
-        "image": "https://itemimage.png",
+        "image": "https://itemimage.webp",
         "rating": {
             "rate": 3.9,
             "count": 120
