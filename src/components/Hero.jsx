@@ -2,12 +2,12 @@ import apiExample from "../assets/api.png";
 
 export default function Hero() {
   return (
-    <section className="relative bg-[#121313] text-white min-h-screen overflow-hidden flex flex-col -mt-20">
+    <section className="relative  bg-[#121313] text-white min-h-screen overflow-hidden flex flex-col md:justify-center -mt-20">
       {/* BACKGROUND */}
       <div className="absolute inset-0 cyber-pattern z-0" />
 
       {/* HERO CONTENT */}
-      <div className="grid md:grid-cols-2 z-10 gap-16 items-center max-w-7xl mx-auto px-6 md:px-16 mt-40">
+      <div className="grid md:grid-cols-2 z-10 gap-16 items-center max-w-7xl mx-auto px-6 md:px-16 max-md:mt-36">
         {/* LEFT SIDE */}
         <div>
           {/* COMMUNITY BADGE */}
@@ -46,12 +46,12 @@ export default function Hero() {
 
           {/* CTA */}
           <div className="flex gap-4 mt-8">
-            <button className="bg-[#ff6044] hover:opacity-90 cursor-pointer text-sm font-medium text-[#121313] px-6 py-1 rounded-lg transition-all">
-              Get Started
+            <button className="bg-[#ff6044] hover:opacity-90 cursor-pointer text-xs sm:text-sm font-medium text-[#121313] px-6 py-2 sm:py-1 rounded-lg transition-all">
+              View on Github
             </button>
 
-            <button className="border border-gray-700 hover:border-[#ff6044] text-sm font-medium px-6 py-2 rounded-lg cursor-pointer transition-all">
-              Try API
+            <button className="border border-gray-700 hover:border-[#ff6044] text-xs sm:text-sm font-medium px-6 py-3 sm:py-2 rounded-lg cursor-pointer transition-all">
+              Read Docs
             </button>
           </div>
         </div>

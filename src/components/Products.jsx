@@ -2,41 +2,41 @@ import { ThreeDMarquee } from "@/components/ui/3d-marquee";
 
 export default function Products() {
   const images = [
-    "https://assets.aceternity.com/cloudinary_bkp/3d-card.png",
-    "https://assets.aceternity.com/animated-modal.png",
-    "https://assets.aceternity.com/animated-testimonials.webp",
-    "https://assets.aceternity.com/cloudinary_bkp/Tooltip_luwy44.png",
-    "https://assets.aceternity.com/github-globe.png",
-    "https://assets.aceternity.com/glare-card.png",
-    "https://assets.aceternity.com/layout-grid.png",
-    "https://assets.aceternity.com/flip-text.png",
-    "https://assets.aceternity.com/hero-highlight.png",
-    "https://assets.aceternity.com/carousel.webp",
-    "https://assets.aceternity.com/placeholders-and-vanish-input.png",
-    "https://assets.aceternity.com/shooting-stars-and-stars-background.png",
-    "https://assets.aceternity.com/signup-form.png",
-    "https://assets.aceternity.com/cloudinary_bkp/stars_sxle3d.png",
-    "https://assets.aceternity.com/spotlight-new.webp",
-    "https://assets.aceternity.com/cloudinary_bkp/Spotlight_ar5jpr.png",
-    "https://assets.aceternity.com/cloudinary_bkp/Parallax_Scroll_pzlatw_anfkh7.png",
-    "https://assets.aceternity.com/tabs.png",
-    "https://assets.aceternity.com/cloudinary_bkp/Tracing_Beam_npujte.png",
-    "https://assets.aceternity.com/cloudinary_bkp/typewriter-effect.png",
-    "https://assets.aceternity.com/glowing-effect.webp",
-    "https://assets.aceternity.com/hover-border-gradient.png",
-    "https://assets.aceternity.com/cloudinary_bkp/Infinite_Moving_Cards_evhzur.png",
-    "https://assets.aceternity.com/cloudinary_bkp/Lamp_hlq3ln.png",
-    "https://assets.aceternity.com/macbook-scroll.png",
-    "https://assets.aceternity.com/cloudinary_bkp/Meteors_fye3ys.png",
-    "https://assets.aceternity.com/cloudinary_bkp/Moving_Border_yn78lv.png",
-    "https://assets.aceternity.com/multi-step-loader.png",
-    "https://assets.aceternity.com/vortex.png",
-    "https://assets.aceternity.com/wobble-card.png",
-    "https://assets.aceternity.com/world-map.webp",
+    "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-ball/1.webp",
+    "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/1.webp",
+    "https://cdn.dummyjson.com/product-images/skin-care/olay-ultra-moisture-shea-butter-body-wash/1.webp",
+    "https://cdn.dummyjson.com/product-images/kitchen-accessories/microwave-oven/1.webp",
+    "https://cdn.dummyjson.com/product-images/kitchen-accessories/ice-cube-tray/1.webp",
+    "https://cdn.dummyjson.com/product-images/home-decoration/table-lamp/1.webp",
+    "https://cdn.dummyjson.com/product-images/home-decoration/decoration-swing/1.webp",
+    "https://cdn.dummyjson.com/product-images/sunglasses/sunglasses/1.webp",
+    "https://cdn.dummyjson.com/product-images/furniture/bedside-table-african-cherry/1.webp",
+    "https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/1.webp",
+    "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp",
+    "https://cdn.dummyjson.com/product-images/fragrances/dior-j'adore/1.webp",
+    "https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/1.webp",
+    "https://cdn.dummyjson.com/product-images/beauty/powder-canister/1.webp",
+    "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp",
+    "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/1.webp",
+    "https://cdn.dummyjson.com/product-images/kitchen-accessories/grater-black/1.webp",
+    "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/1.webp",
+    "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/1.webp",
+    "https://cdn.dummyjson.com/product-images/sports-accessories/basketball/1.webp",
+    "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-wicket/1.webp",
+    "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-ball/1.webp",
+    "https://cdn.dummyjson.com/product-images/sports-accessories/volleyball/1.webp",
+    "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
+    "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png",
+    "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png",
+    "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_t.png",
+    "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
+    "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png",
+    "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/1.webp",
+    "https://cdn.dummyjson.com/product-images/kitchen-accessories/electric-stove/1.webp",
   ];
   return (
     <section
-    id="products"
+      id="products"
       className="py-24 bg-black bg-[radial-gradient(rgba(255,96,68,0.15)_1.5px,transparent_0)]
       bg-size-[20px_20px]
       bg-position-[-1px_-1px]"
@@ -44,11 +44,17 @@ export default function Products() {
       <h2 className="text-white text-3xl md:text-4xl text-center">
         Products You’ll <span className="text-[#ff6044] italic">Get</span>
       </h2>
-
       <p className="text-white/50 text-sm max-w-md mx-auto mt-4 mb-16 text-center">
         See some of the products in our API
       </p>
-      <ThreeDMarquee images={images} />
+      <ThreeDMarquee
+        images={images}
+        className="
+  h-[75vh]
+  mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent),linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
+  mask-intersect
+"
+      />{" "}
     </section>
   );
 }
