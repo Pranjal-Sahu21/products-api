@@ -63,7 +63,7 @@ const Navbar = () => {
           Docs
         </Link>
         <a
-          href=""
+          href="https://github.com/Pranjal-Sahu21/products-api-backend"
           onClick={() => setMenuOpen(false)}
           className="hover:text-[#ff6044] cursor-pointer"
         >

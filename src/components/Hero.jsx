@@ -46,9 +46,12 @@ export default function Hero() {
 
           {/* CTA */}
           <div className="flex gap-4 mt-8">
-            <button className="bg-[#ff6044] hover:opacity-90 cursor-pointer text-xs sm:text-sm font-medium text-[#121313] px-6 py-2 sm:py-1 rounded-lg transition-all">
+            <a
+              href="https://github.com/Pranjal-Sahu21/products-api-backend"
+              className="bg-[#ff6044] flex justify-center items-center hover:opacity-90 cursor-pointer text-xs sm:text-sm font-medium text-[#121313] px-6 py-2 sm:py-1 rounded-lg transition-all"
+            >
               View on Github
-            </button>
+            </a>
 
             <button className="border border-gray-700 hover:border-[#ff6044] text-xs sm:text-sm font-medium px-6 py-3 sm:py-2 rounded-lg cursor-pointer transition-all">
               Read Docs
