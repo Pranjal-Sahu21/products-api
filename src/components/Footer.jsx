@@ -1,4 +1,5 @@
 import { Twitter, Github, Linkedin, Youtube, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -66,7 +67,7 @@ const Footer = () => {
               <h3 className="text-sm mb-4">Resources</h3>
               <ul className="space-y-3 text-sm text-neutral-400">
                 <li>
-                  <a className="cursor-pointer hover:text-[#ff6044]">Docs</a>
+                  <Link to='/docs' className="cursor-pointer hover:text-[#ff6044]">Docs</Link>
                 </li>
                 <li>
                   <a className="cursor-pointer hover:text-[#ff6044]">Blog</a>

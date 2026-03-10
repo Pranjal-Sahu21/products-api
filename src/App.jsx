@@ -1,18 +1,19 @@
-import FAQSection from "./components/FAQSection";
-import Features from "./components/Features";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
+import { Route, Routes } from "react-router-dom";
+import Docs from "./components/Docs";
+import NotFound from "./components/NotFound";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Products from "./components/Products";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Features />
-      <Products />
-      <FAQSection />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/docs" element={<Docs />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <Footer />
     </>
   );

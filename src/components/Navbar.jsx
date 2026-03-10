@@ -1,7 +1,13 @@
+import useScrollToSection from "@/hooks/useScrollToSection";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const scrollToSection = useScrollToSection();
 
   return (
     <nav
@@ -13,7 +19,10 @@ const Navbar = () => {
       shadow-lg text-white"
     >
       {/* Logo */}
-      <h1 className="text-xl tracking-wide">
+      <h1
+        onClick={() => navigate("/")}
+        className="text-xl tracking-wide cursor-pointer"
+      >
         DummiStore <span className="text-[#ff6044] italic">API</span>
       </h1>
 
@@ -26,41 +35,50 @@ const Navbar = () => {
         
         ${menuOpen ? "w-full bg-black/95" : "w-0 md:w-auto overflow-hidden"}`}
       >
-        <a
+        <Link
+          to="/"
           onClick={() => {
+            scrollToSection("features");
             setMenuOpen(false);
-            document
-              .getElementById("features")
-              .scrollIntoView({ behavior: "smooth" });
           }}
           className="hover:text-[#ff6044] cursor-pointer"
         >
           Features
-        </a>
-        <a
+        </Link>
+        <Link
+          to="/"
           onClick={() => {
+            scrollToSection("products");
             setMenuOpen(false);
-            document
-              .getElementById("products")
-              .scrollIntoView({ behavior: "smooth" });
           }}
           className="hover:text-[#ff6044] cursor-pointer"
         >
           Products
-        </a>
-        <a className="hover:text-[#ff6044] cursor-pointer">Docs</a>
-        <a className="hover:text-[#ff6044] cursor-pointer">Github</a>
+        </Link>
+        <Link
+          to="/docs"
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-[#ff6044] cursor-pointer"
+        >
+          Docs
+        </Link>
         <a
+          href=""
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-[#ff6044] cursor-pointer"
+        >
+          Github
+        </a>
+        <Link
+          to="/"
           onClick={() => {
+            scrollToSection("faq");
             setMenuOpen(false);
-            document
-              .getElementById("faq")
-              .scrollIntoView({ behavior: "smooth" });
           }}
           className="hover:text-[#ff6044] cursor-pointer"
         >
           FAQs
-        </a>
+        </Link>
       </div>
 
       {/* Mobile Menu Button */}
