@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import apiExample from "../assets/api.png";
 
 export default function Hero() {
@@ -53,9 +54,12 @@ export default function Hero() {
               View on Github
             </a>
 
-            <button className="border border-gray-700 hover:border-[#ff6044] text-xs sm:text-sm font-medium px-6 py-3 sm:py-2 rounded-lg cursor-pointer transition-all">
+            <Link
+              to="/docs"
+              className="border border-gray-700 hover:border-[#ff6044] text-xs sm:text-sm font-medium px-6 py-3 sm:py-2 rounded-lg cursor-pointer transition-all"
+            >
               Read Docs
-            </button>
+            </Link>
           </div>
         </div>
 
