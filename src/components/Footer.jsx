@@ -1,7 +1,14 @@
-import { Twitter, Github, Linkedin, Youtube, Instagram } from "lucide-react";
+import useScrollToSection from "@/hooks/useScrollToSection";
+import {
+  Github,
+  Linkedin, Instagram,
+  Mail
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const scrollToSection = useScrollToSection();
+
   return (
     <div
       className="bg-black pt-20 border border-black bg-[radial-gradient(rgba(255,96,68,0.15)_1.5px,transparent_0)]
@@ -22,20 +29,29 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex gap-5 md:gap-6">
-              <a className="cursor-pointer hover:text-[#ff6044]">
-                <Twitter size={20} />
-              </a>
-              <a className="cursor-pointer hover:text-[#ff6044]">
+              <a
+                href="https://github.com/Pranjal-Sahu21/products-api-backend"
+                className="cursor-pointer hover:text-[#ff6044]"
+              >
                 <Github size={20} />
               </a>
-              <a className="cursor-pointer hover:text-[#ff6044]">
+              <a
+                href="https://www.linkedin.com/in/pranjal-sahu-/"
+                className="cursor-pointer hover:text-[#ff6044]"
+              >
                 <Linkedin size={20} />
               </a>
-              <a className="cursor-pointer hover:text-[#ff6044]">
-                <Youtube size={20} />
-              </a>
-              <a className="cursor-pointer hover:text-[#ff6044]">
+              <a
+                href="https://www.instagram.com/prsahu_21"
+                className="cursor-pointer hover:text-[#ff6044]"
+              >
                 <Instagram size={20} />
+              </a>
+              <a
+                href="mailto:sahupranjal1619@gmail.com"
+                className="cursor-pointer hover:text-[#ff6044]"
+              >
+                <Mail size={20} />
               </a>
             </div>
           </div>
@@ -47,7 +63,10 @@ const Footer = () => {
               <h3 className="text-sm mb-4">Products</h3>
               <ul className="space-y-3 text-sm text-neutral-400">
                 <li>
-                  <a className="cursor-pointer hover:text-[#ff6044]">
+                  <a
+                    onClick={() => scrollToSection("products")}
+                    className="cursor-pointer hover:text-[#ff6044]"
+                  >
                     Components
                   </a>
                 </li>
@@ -67,7 +86,12 @@ const Footer = () => {
               <h3 className="text-sm mb-4">Resources</h3>
               <ul className="space-y-3 text-sm text-neutral-400">
                 <li>
-                  <Link to='/docs' className="cursor-pointer hover:text-[#ff6044]">Docs</Link>
+                  <Link
+                    to="/docs"
+                    className="cursor-pointer hover:text-[#ff6044]"
+                  >
+                    Docs
+                  </Link>
                 </li>
                 <li>
                   <a className="cursor-pointer hover:text-[#ff6044]">Blog</a>

@@ -5,17 +5,17 @@ const faqs = [
   {
     question: "How do I fetch products from the API?",
     answer:
-      "You can fetch products via a simple GET request to `/api/products`. No authentication is required, and the API returns JSON data for instant development.",
+      "You can fetch products via a simple GET request to `https://dummistore-wuga.onrender.com/products`. No authentication is required, and the API returns JSON data for instant development.",
   },
   {
     question: "Is the API free to use?",
     answer:
-      "Yes! The DummyStore API is completely free for developers, designers, and testers. There are no hidden fees or rate limits for standard use.",
+      "Yes! The DummiStore API is completely free for developers, designers, and testers. There are no hidden fees or rate limits.",
   },
   {
     question: "Can I filter or search products?",
     answer:
-      "Yes. You can filter products by category or search by title using query parameters like `?category=electronics` or `?search=shirt`.",
+      "Yes. You can filter products by category or search by title, making it easier to find items.",
   },
   {
     question: "Do I need an API key?",
@@ -69,9 +69,7 @@ export default function FAQSection() {
                   onClick={() => toggleFAQ(index)}
                   className="w-full flex items-center justify-between px-6 py-5 text-left"
                 >
-                  <span className="text-white/90">
-                    {faq.question}
-                  </span>
+                  <span className="text-white/90">{faq.question}</span>
 
                   <span
                     className={`transition-transform duration-300 text-[#ff6044] ${
