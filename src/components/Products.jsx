@@ -50,10 +50,10 @@ export default function Products() {
       <ThreeDMarquee
         images={images}
         className="
-  h-[75vh]
-  mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent),linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
-  mask-intersect
-"
+        h-[75vh]
+        mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent),linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
+        mask-intersect
+      "
       />{" "}
     </section>
   );

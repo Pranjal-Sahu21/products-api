@@ -1,19 +1,16 @@
 import useScrollToSection from "@/hooks/useScrollToSection";
-import {
-  Github,
-  Linkedin, Instagram,
-  Mail
-} from "lucide-react";
-import { Link } from "react-router-dom";
+import { Github, Linkedin, Instagram, Mail } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
   const scrollToSection = useScrollToSection();
+  const { pathname } = useLocation();
 
   return (
     <div
-      className="bg-black pt-20 border border-black bg-[radial-gradient(rgba(255,96,68,0.15)_1.5px,transparent_0)]
+      className={`${pathname === '/docs' ? "lg:-mt-44" : ""} bg-black pt-20 border border-black bg-[radial-gradient(rgba(255,96,68,0.15)_1.5px,transparent_0)]
       bg-size-[20px_20px]
-      bg-position-[-1px_-1px]"
+      bg-position-[-1px_-1px]`}
     >
       <footer className="bg-[#0e0d0d] w-full mx-auto text-white pt-8 lg:pt-12 px-4 sm:px-8 md:px-16 lg:px-28 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-6 gap-8 md:gap-12">

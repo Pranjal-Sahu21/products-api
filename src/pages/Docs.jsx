@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Docs = () => {
-
   const endpoints = [
     {
       id: 1,
@@ -105,6 +104,21 @@ const Docs = () => {
     },
   ];
 
+  const exampleResponse = `[
+    {
+        "id": 1,
+        "title": "Item title",
+        "price": 21.00,
+        "description": "Item description",
+        "category": "Item category",
+        "image": "https://itemimage.webp",
+        "rating": {
+            "rate": 3.9,
+            "count": 120
+        }
+    }
+]`;
+
   const scrollToSection = useScrollToSection();
 
   useEffect(() => {
@@ -135,9 +149,34 @@ const Docs = () => {
           "
         >
           <div className="lg:sticky lg:top-24 p-6">
-            <h3 className="hidden lg:block text-xs uppercase tracking-widest text-neutral-500 mb-6">
+            <Link
+              to="/docs"
+              onClick={() => scrollToSection("base-url")}
+              className="hidden lg:block text-xs uppercase tracking-widest text-neutral-400 mb-6 cursor-pointer hover:text-white transition-all"
+            >
+              Base Url
+            </Link>
+            <Link
+              to="/docs"
+              onClick={() => scrollToSection("response-format")}
+              className="hidden lg:block text-xs uppercase tracking-widest text-neutral-400 mb-6 cursor-pointer hover:text-white transition-all"
+            >
+              Response format
+            </Link>
+            <Link
+              to="/docs"
+              onClick={() => scrollToSection("categories")}
+              className="hidden lg:block text-xs uppercase tracking-widest text-neutral-400 mb-6 cursor-pointer hover:text-white transition-all"
+            >
+              Categories List
+            </Link>
+            <Link
+              to="/docs"
+              onClick={() => scrollToSection("endpoints")}
+              className="hidden lg:block text-xs uppercase tracking-widest text-neutral-400 mb-6 cursor-pointer hover:text-white transition-all"
+            >
               API Endpoints
-            </h3>
+            </Link>
 
             {/* Desktop Sidebar */}
             <nav className="hidden lg:flex flex-col gap-2">
@@ -151,7 +190,7 @@ const Docs = () => {
                   px-3 py-2
                   rounded-lg
                   text-sm
-                  text-neutral-400
+                  text-neutral-500
                   hover:text-white
                   hover:bg-neutral-900
                   transition cursor-pointer
@@ -164,16 +203,23 @@ const Docs = () => {
                   </span>
                 </Link>
               ))}
+              <Link
+                to="/docs"
+                onClick={() => scrollToSection("code-examples")}
+                className="hidden lg:block text-xs uppercase tracking-widest text-neutral-400 mt-6 cursor-pointer hover:text-white transition-all"
+              >
+                Code examples
+              </Link>
             </nav>
           </div>
         </aside>
 
-
         {/* MAIN CONTENT */}
         <div className="flex-1 px-6 sm:px-10 lg:px-16 py-12">
           {/* Heading */}
-          <h1 className="text-3xl sm:text-4xl text-white text-center mb-4">
-            API <span className="italic text-[#ff6044]">Documentation</span>
+          <h1 className="text-3xl sm:text-4xl text-white text-center mb-6 lg:mb-0">
+            Learn more about Dummistore{" "}
+            <span className="italic text-[#ff6044]">API</span>
           </h1>
 
           <p className="text-white/50 text-sm max-w-md mx-auto mt-4 mb-12 lg:mb-0 text-center">
@@ -181,15 +227,72 @@ const Docs = () => {
             them.
           </p>
 
+          {/* BASE URL SECTION */}
+          <div className="mb-24">
+            <h1
+              id="base-url"
+              className="text-2xl text-neutral-400 font-light lg:pt-24 mb-12"
+            >
+              <span className=" text-[#ff6044]">#</span> BASE URL
+            </h1>
+
+            <div className="rounded-lg border border-neutral-800 overflow-hidden pb-12 bg-neutral-950">
+              {/* Terminal header */}
+              <div className="flex items-center gap-2 px-4 py-2 mb-6 border-b border-neutral-800 bg-neutral-900">
+                <span className="w-3 h-3 rounded-full bg-red-500"></span>
+                <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
+                <span className="w-3 h-3 rounded-full bg-green-500"></span>
+              </div>
+
+              {/* URL */}
+              <a
+                href="https://dummistore-wuga.onrender.com"
+                className="p-4 text-sm text-neutral-300 overflow-x-auto hover:underline cursor-pointer endpoint-path"
+              >
+                https://dummistore-wuga.onrender.com
+              </a>
+            </div>
+          </div>
+
+          {/* RESPONSE FORMAT SECTION */}
+          <div className="-mt-12 lg:-mt-24">
+            <h1
+              id="response-format"
+              className="text-2xl text-neutral-400 font-light lg:pt-24 mb-12"
+            >
+              <span className=" text-[#ff6044]">#</span> RESPONSE FORMAT
+            </h1>
+
+            <div className="rounded-lg border border-neutral-800 overflow-hidden bg-neutral-950">
+              {/* Terminal header */}
+              <div className="flex items-center gap-2 px-4 py-2 mb-6 border-b border-neutral-800 bg-neutral-900">
+                <span className="w-3 h-3 rounded-full bg-red-500"></span>
+                <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
+                <span className="w-3 h-3 rounded-full bg-green-500"></span>
+              </div>
+
+              <pre className="p-4 text-sm text-neutral-300 overflow-x-auto font-mono leading-relaxed">
+                {exampleResponse}
+              </pre>
+            </div>
+          </div>
+
+          {/* API ENDPOINTS SECTION */}
           <div className="space-y-24">
+            <h1
+              id="endpoints"
+              className="text-2xl text-neutral-400 font-light lg:pt-24 text-start mt-12 mb-12 lg:-mb-12"
+            >
+              <span className=" text-[#ff6044]">#</span> API ENDPOINTS
+            </h1>
             {endpoints.map((ep, index) => (
               <div key={ep.id}>
                 <div id={ep.id} className="lg:pt-24">
                   {/* Section Title */}
-                  <h2 className="text-2xl text-white mb-6 flex gap-3 items-center">
-                    <span className="relative flex h-3 w-3">
+                  <h2 className="text-xl text-white mb-6 flex gap-2 items-center">
+                    <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                     </span>
                     {ep.title}
                   </h2>
@@ -262,7 +365,7 @@ const Docs = () => {
 
                 {/* Divider */}
                 {index !== endpoints.length - 1 && (
-                  <div className="mt-24 lg:-mb-24 border-t border-neutral-700"></div>
+                  <div className="hidden lg:block mt-24 lg:-mb-24 border-t border-neutral-700"></div>
                 )}
               </div>
             ))}
