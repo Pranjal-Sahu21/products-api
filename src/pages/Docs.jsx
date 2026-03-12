@@ -1,9 +1,12 @@
 import CodeExamples from "@/components/CodeExamples";
 import useScrollToSection from "@/hooks/useScrollToSection";
-import { useEffect } from "react";
+import { ChevronRight, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Docs = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   const endpoints = [
     {
       id: 1,
@@ -120,67 +123,6 @@ const Docs = () => {
     }
 ]`;
 
-  // const categories = [
-  //   {
-  //     name: "electronics",
-  //     image: "https://i.postimg.cc/HJ3QmQCZ/product14.webp",
-  //   },
-  //   { name: "jewelery", image: "https://i.postimg.cc/d7n8F8KR/product8.webp" },
-  //   {
-  //     name: "men's clothing",
-  //     image: "https://i.postimg.cc/rdqS7f7j/product2.webp",
-  //   },
-  //   {
-  //     name: "women's clothing",
-  //     image: "https://i.postimg.cc/sBKpzpRN/product16.webp",
-  //   },
-  //   {
-  //     name: "beauty",
-  //     image:
-  //       "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp",
-  //   },
-  //   {
-  //     name: "fragrances",
-  //     image:
-  //       "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp",
-  //   },
-  //   {
-  //     name: "furniture",
-  //     image:
-  //       "https://cdn.dummyjson.com/product-images/furniture/bedside-table-african-cherry/1.webp",
-  //   },
-  //   {
-  //     name: "sunglasses",
-  //     image:
-  //       "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/1.webp",
-  //   },
-  //   {
-  //     name: "home-decoration",
-  //     image:
-  //       "https://cdn.dummyjson.com/product-images/home-decoration/table-lamp/1.webp",
-  //   },
-  //   {
-  //     name: "kitchen-accessories",
-  //     image:
-  //       "https://cdn.dummyjson.com/product-images/kitchen-accessories/microwave-oven/1.webp",
-  //   },
-  //   {
-  //     name: "skin-care",
-  //     image:
-  //       "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/1.webp",
-  //   },
-  //   {
-  //     name: "sports-accessories",
-  //     image:
-  //       "https://cdn.dummyjson.com/product-images/sports-accessories/basketball/1.webp",
-  //   },
-  //   {
-  //     name: "smartphones",
-  //     image:
-  //       "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/1.webp",
-  //   },
-  // ];
-
   const categoriesCode = `const categories = [
   "electronics",
   "jewelery",
@@ -196,6 +138,7 @@ const Docs = () => {
   "sports-accessories",
   "smartphones"
 ];`;
+
   const languages = [
     {
       id: 1,
@@ -236,7 +179,7 @@ const Docs = () => {
       bg-position-[-1px_-1px]
       "
     >
-      <div className="w-full mx-auto flex flex-col lg:flex-row">
+      <div className="w-full mx-auto flex flex-col justify-center lg:flex-row">
         {/* SIDEBAR */}
         <aside
           className="
@@ -341,6 +284,104 @@ const Docs = () => {
             </nav>
           </div>
         </aside>
+        {/* MOBILE SIDEBAR DRAWER */}
+        <div
+          className={`fixed top-0 left-0 h-full w-64 z-40 bg-neutral-950 text-neutral-400
+          transition-transform duration-300 lg:hidden
+          ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
+        `}
+        >
+          <div className="p-6">
+            {/* Headings Only */}
+            <nav className="flex flex-col items-start gap-6 text-sm mt-[20vh]">
+              <div className="text-white text-xl mb-2 tracking-widest">
+                CONTENT
+              </div>
+              <button
+                className="uppercase font-light tracking-widest"
+                onClick={() => {
+                  document
+                    .getElementById("base-url")
+                    .scrollIntoView({ behavior: "smooth" });
+                  setSidebarOpen(false);
+                }}
+              >
+                Base URL
+              </button>
+
+              <button
+                className="uppercase font-light tracking-widest"
+                onClick={() => {
+                  document
+                    .getElementById("response-format")
+                    .scrollIntoView({ behavior: "smooth" });
+                  setSidebarOpen(false);
+                }}
+              >
+                Response Format
+              </button>
+
+              <button
+                className="uppercase font-light tracking-widest"
+                onClick={() => {
+                  document
+                    .getElementById("categories")
+                    .scrollIntoView({ behavior: "smooth" });
+                  setSidebarOpen(false);
+                }}
+              >
+                Categories List
+              </button>
+
+              <button
+                className="uppercase font-light tracking-widest"
+                onClick={() => {
+                  document
+                    .getElementById("endpoints")
+                    .scrollIntoView({ behavior: "smooth" });
+                  setSidebarOpen(false);
+                }}
+              >
+                API Endpoints
+              </button>
+
+              <button
+                className="uppercase font-light tracking-widest"
+                onClick={() => {
+                  document
+                    .getElementById("code-examples")
+                    .scrollIntoView({ behavior: "smooth" });
+                  setSidebarOpen(false);
+                }}
+              >
+                Code Examples
+              </button>
+            </nav>
+          </div>
+        </div>
+
+        {/* MOBILE SIDEBAR BUTTON */}
+        <button
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+          className={`
+          lg:hidden
+          fixed
+          top-20
+          z-40
+          p-2
+          rounded-md
+          bg-neutral-900
+          border border-neutral-800
+          text-white
+          transition-all duration-300 left-4
+        `}
+        >
+          <ChevronRight
+            className={`size-5 transition-all duration-300 ${
+              sidebarOpen ? "rotate-180" : "rotate-0"
+            }`}
+          />
+        </button>
 
         {/* MAIN CONTENT */}
         <div className="flex-1 px-6 sm:px-10 lg:px-16 py-12">
@@ -350,17 +391,14 @@ const Docs = () => {
             <span className="italic text-[#ff6044]">API</span>
           </h1>
 
-          <p className="text-white/50 text-sm max-w-md mx-auto mt-4 mb-12 lg:mb-0 text-center">
+          <p className="text-white/50 text-sm max-w-md mx-auto mt-4 text-center">
             Learn about the available API endpoints and how to interact with
             them.
           </p>
 
           {/* BASE URL SECTION */}
-          <div className="mb-24">
-            <h1
-              id="base-url"
-              className="text-2xl text-neutral-400 font-light lg:pt-24 mb-12"
-            >
+          <div id="base-url" className="mb-24 pt-24">
+            <h1 className="text-2xl text-neutral-400 font-light tracking-wide mb-12">
               <span className=" text-[#ff6044]">#</span> BASE URL
             </h1>
 
@@ -375,7 +413,7 @@ const Docs = () => {
               {/* URL */}
               <a
                 href="https://dummistore-wuga.onrender.com"
-                className="p-4 text-sm text-neutral-300 overflow-x-auto hover:underline cursor-pointer endpoint-path"
+                className="block p-2 text-sm text-neutral-300 overflow-x-auto hover:underline cursor-pointer endpoint-path"
               >
                 https://dummistore-wuga.onrender.com
               </a>
@@ -383,11 +421,8 @@ const Docs = () => {
           </div>
 
           {/* RESPONSE FORMAT SECTION */}
-          <div className="-mt-6 lg:-mt-24">
-            <h1
-              id="response-format"
-              className="text-2xl text-neutral-400 font-light lg:pt-24 mb-12"
-            >
+          <div id="response-format" className="-mt-24">
+            <h1 className="text-2xl text-neutral-400 font-light tracking-wide pt-24 mb-12">
               <span className=" text-[#ff6044]">#</span> RESPONSE FORMAT
             </h1>
 
@@ -406,11 +441,8 @@ const Docs = () => {
           </div>
 
           {/* CATEGORIES SECTION */}
-          <div className="mt-18 lg:mt-0">
-            <h1
-              id="categories"
-              className="text-2xl text-neutral-400 font-light lg:pt-24 mb-12"
-            >
+          <div id="categories">
+            <h1 className="text-2xl text-neutral-400 font-light tracking-wide pt-24 mb-12">
               <span className="text-[#ff6044]">#</span> CATEGORIES LIST
             </h1>
 
@@ -429,11 +461,8 @@ const Docs = () => {
           </div>
 
           {/* API ENDPOINTS SECTION */}
-          <div className="space-y-24">
-            <h1
-              id="endpoints"
-              className="text-2xl text-neutral-400 font-light lg:pt-24 text-start mt-12 lg:mt-0 mb-12 lg:-mb-12"
-            >
+          <div id="endpoints" className="space-y-24">
+            <h1 className="text-2xl text-neutral-400 font-light tracking-wide pt-24 text-start lg:mt-0 mb-12 lg:-mb-12">
               <span className=" text-[#ff6044]">#</span> API ENDPOINTS
             </h1>
             {endpoints.map((ep, index) => (

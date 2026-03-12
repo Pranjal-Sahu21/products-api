@@ -58,11 +58,8 @@ func main() {
   };
 
   return (
-    <div className="mt-24 lg:-mt-6">
-      <h1
-        id="code-examples"
-        className="text-2xl text-neutral-400 font-light lg:pt-30 -mb-12"
-      >
+    <div id="code-examples" className="pt-24 lg:pt-0">
+      <h1 className="text-2xl text-neutral-400 font-light lg:pt-30 -mb-12">
         <span className="text-[#ff6044]">#</span> CODE EXAMPLES
       </h1>
 
