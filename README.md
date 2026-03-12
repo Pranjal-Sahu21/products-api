@@ -126,17 +126,16 @@ The optimized build will be in the `dist/` directory.
 |   |   ├── api.js
 |   |   └── api.png
 |   |
-|   ├── ui/                        # ui folder
-|   |   └── 3d-marquee.jsx
-│   │
 │   ├── components/                # Reusable UI components
-│   │   ├── About.jsx
-│   │   ├── Features.jsx
+|   |   ├── ui/                        # ui folder
+|   |   |    └── 3d-marquee.jsx
+│   │   ├── CodeExamples.jsx
 │   │   ├── FAQSection.jsx
+│   │   ├── Features.jsx
+│   │   └── Footer.jsx
 |   |   ├── Hero.jsx
 │   │   ├── Navbar.jsx
 |   |   ├── Products.jsx
-│   │   └── Footer.jsx
 │   │
 |   ├── hooks/                     # Custom hooks
 |   |   └── useScrollToSection.js

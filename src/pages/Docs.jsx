@@ -1,3 +1,4 @@
+import CodeExamples from "@/components/CodeExamples";
 import useScrollToSection from "@/hooks/useScrollToSection";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -200,6 +201,29 @@ const Docs = () => {
     },
   ];
 
+  const languages = [
+    {
+      id: 1,
+      title: "python",
+    },
+    {
+      id: 2,
+      title: "javascript",
+    },
+    {
+      id: 3,
+      title: "node.js",
+    },
+    {
+      id: 4,
+      title: "php",
+    },
+    {
+      id: 5,
+      title: "go",
+    },
+  ];
+
   const half = Math.ceil(categories.length / 2);
 
   const topCategories = categories.slice(0, half);
@@ -226,7 +250,7 @@ const Docs = () => {
         {/* SIDEBAR */}
         <aside
           className="
-          lg:w-72
+          lg:w-84
           lg:min-h-screen
           lg:border-r
           border-neutral-800
@@ -234,7 +258,7 @@ const Docs = () => {
           backdrop-blur
           "
         >
-          <div className="lg:sticky lg:top-24 p-6">
+          <div className="lg:sticky lg:top-20 p-6">
             <Link
               to="/docs"
               onClick={() => scrollToSection("base-url")}
@@ -282,20 +306,42 @@ const Docs = () => {
                   transition cursor-pointer
                   "
                 >
-                  <span className="truncate">{ep.title}</span>
+                  <span className="truncate">• {ep.title}</span>
 
                   <span className="text-xs px-2 py-0.5 rounded bg-green-500/10 text-green-400">
                     {ep.method}
                   </span>
                 </Link>
               ))}
-              <Link
-                to="/docs"
-                onClick={() => scrollToSection("code-examples")}
-                className="hidden lg:block text-xs uppercase tracking-widest text-neutral-400 mt-6 cursor-pointer hover:text-white transition-all"
-              >
-                Code examples
-              </Link>
+            </nav>
+            <Link
+              to="/docs"
+              onClick={() => scrollToSection("code-examples")}
+              className="hidden lg:block text-xs uppercase tracking-widest text-neutral-400 mt-6 cursor-pointer hover:text-white transition-all"
+            >
+              Code examples
+            </Link>
+            {/* Desktop Sidebar */}
+            <nav className="hidden lg:flex flex-col gap-2 mt-6">
+              {languages.map((lang) => (
+                <Link
+                  to="/docs"
+                  key={lang.id}
+                  onClick={() => scrollToSection(lang.title)}
+                  className="
+                  flex items-center justify-between
+                  px-3 py-2
+                  rounded-lg
+                  text-sm
+                  text-neutral-500
+                  hover:text-white
+                  hover:bg-neutral-900
+                  transition cursor-pointer capitalize
+                  "
+                >
+                  <span className="truncate">• {lang.title}</span>
+                </Link>
+              ))}
             </nav>
           </div>
         </aside>
@@ -403,7 +449,7 @@ const Docs = () => {
           <div className="space-y-24">
             <h1
               id="endpoints"
-              className="text-2xl text-neutral-400 font-light lg:pt-24 text-start mt-12 mb-12 lg:-mb-12"
+              className="text-2xl text-neutral-400 font-light lg:pt-24 text-start mt-12 lg:mt-0 mb-12 lg:-mb-12"
             >
               <span className=" text-[#ff6044]">#</span> API ENDPOINTS
             </h1>
@@ -492,6 +538,9 @@ const Docs = () => {
               </div>
             ))}
           </div>
+
+          {/* CODE EXAMPLES SECTION */}
+          <CodeExamples />
         </div>
       </div>
     </section>
