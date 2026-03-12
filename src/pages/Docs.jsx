@@ -3,26 +3,6 @@ import useScrollToSection from "@/hooks/useScrollToSection";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const CategoryCard = ({ cat }) => {
-  return (
-    <div className="relative w-56 h-32 rounded-xl overflow-hidden border border-neutral-800 shrink-0 group">
-      <img
-        src={cat.image}
-        alt={cat.name}
-        className="absolute inset-0 w-full h-full object-cover blur-sm scale-110 group-hover:scale-125 transition duration-500"
-      />
-
-      <div className="absolute inset-0 bg-black/50"></div>
-
-      <div className="relative z-10 flex items-center justify-center h-full">
-        <span className="text-white font-medium text-sm capitalize tracking-wide">
-          {cat.name.replace("-", " ")}
-        </span>
-      </div>
-    </div>
-  );
-};
-
 const Docs = () => {
   const endpoints = [
     {
@@ -140,67 +120,82 @@ const Docs = () => {
     }
 ]`;
 
-  const categories = [
-    {
-      name: "electronics",
-      image: "https://i.postimg.cc/HJ3QmQCZ/product14.webp",
-    },
-    { name: "jewelery", image: "https://i.postimg.cc/d7n8F8KR/product8.webp" },
-    {
-      name: "men's clothing",
-      image: "https://i.postimg.cc/rdqS7f7j/product2.webp",
-    },
-    {
-      name: "women's clothing",
-      image: "https://i.postimg.cc/sBKpzpRN/product16.webp",
-    },
-    {
-      name: "beauty",
-      image:
-        "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp",
-    },
-    {
-      name: "fragrances",
-      image:
-        "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp",
-    },
-    {
-      name: "furniture",
-      image:
-        "https://cdn.dummyjson.com/product-images/furniture/bedside-table-african-cherry/1.webp",
-    },
-    {
-      name: "sunglasses",
-      image:
-        "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/1.webp",
-    },
-    {
-      name: "home-decoration",
-      image:
-        "https://cdn.dummyjson.com/product-images/home-decoration/table-lamp/1.webp",
-    },
-    {
-      name: "kitchen-accessories",
-      image:
-        "https://cdn.dummyjson.com/product-images/kitchen-accessories/microwave-oven/1.webp",
-    },
-    {
-      name: "skin-care",
-      image:
-        "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/1.webp",
-    },
-    {
-      name: "sports-accessories",
-      image:
-        "https://cdn.dummyjson.com/product-images/sports-accessories/basketball/1.webp",
-    },
-    {
-      name: "smartphones",
-      image:
-        "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/1.webp",
-    },
-  ];
+  // const categories = [
+  //   {
+  //     name: "electronics",
+  //     image: "https://i.postimg.cc/HJ3QmQCZ/product14.webp",
+  //   },
+  //   { name: "jewelery", image: "https://i.postimg.cc/d7n8F8KR/product8.webp" },
+  //   {
+  //     name: "men's clothing",
+  //     image: "https://i.postimg.cc/rdqS7f7j/product2.webp",
+  //   },
+  //   {
+  //     name: "women's clothing",
+  //     image: "https://i.postimg.cc/sBKpzpRN/product16.webp",
+  //   },
+  //   {
+  //     name: "beauty",
+  //     image:
+  //       "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp",
+  //   },
+  //   {
+  //     name: "fragrances",
+  //     image:
+  //       "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp",
+  //   },
+  //   {
+  //     name: "furniture",
+  //     image:
+  //       "https://cdn.dummyjson.com/product-images/furniture/bedside-table-african-cherry/1.webp",
+  //   },
+  //   {
+  //     name: "sunglasses",
+  //     image:
+  //       "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/1.webp",
+  //   },
+  //   {
+  //     name: "home-decoration",
+  //     image:
+  //       "https://cdn.dummyjson.com/product-images/home-decoration/table-lamp/1.webp",
+  //   },
+  //   {
+  //     name: "kitchen-accessories",
+  //     image:
+  //       "https://cdn.dummyjson.com/product-images/kitchen-accessories/microwave-oven/1.webp",
+  //   },
+  //   {
+  //     name: "skin-care",
+  //     image:
+  //       "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/1.webp",
+  //   },
+  //   {
+  //     name: "sports-accessories",
+  //     image:
+  //       "https://cdn.dummyjson.com/product-images/sports-accessories/basketball/1.webp",
+  //   },
+  //   {
+  //     name: "smartphones",
+  //     image:
+  //       "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/1.webp",
+  //   },
+  // ];
 
+  const categoriesCode = `const categories = [
+  "electronics",
+  "jewelery",
+  "men's clothing",
+  "women's clothing",
+  "beauty",
+  "fragnances",
+  "furniture",
+  "sunglasses",
+  "home-decoration",
+  "kitchen-accessories",
+  "skin-care",
+  "sports-accessories",
+  "smartphones"
+];`;
   const languages = [
     {
       id: 1,
@@ -223,11 +218,6 @@ const Docs = () => {
       title: "go",
     },
   ];
-
-  const half = Math.ceil(categories.length / 2);
-
-  const topCategories = categories.slice(0, half);
-  const bottomCategories = categories.slice(half);
 
   const scrollToSection = useScrollToSection();
 
@@ -258,7 +248,7 @@ const Docs = () => {
           backdrop-blur
           "
         >
-          <div className="lg:sticky lg:top-20 p-6">
+          <div className="lg:sticky lg:top-24 p-6">
             <Link
               to="/docs"
               onClick={() => scrollToSection("base-url")}
@@ -283,13 +273,13 @@ const Docs = () => {
             <Link
               to="/docs"
               onClick={() => scrollToSection("endpoints")}
-              className="hidden lg:block text-xs uppercase tracking-widest text-neutral-400 mb-6 cursor-pointer hover:text-white transition-all"
+              className="hidden lg:block text-xs uppercase tracking-widest text-neutral-400 mb-2 cursor-pointer hover:text-white transition-all"
             >
               API Endpoints
             </Link>
 
             {/* Desktop Sidebar */}
-            <nav className="hidden lg:flex flex-col gap-2">
+            <nav className="hidden lg:flex flex-col">
               {endpoints.map((ep) => (
                 <Link
                   to="/docs"
@@ -306,7 +296,10 @@ const Docs = () => {
                   transition cursor-pointer
                   "
                 >
-                  <span className="truncate">• {ep.title}</span>
+                  <span className="truncate flex justify-center items-center gap-1">
+                    <span className="font-extrabold text-lg">• </span>{" "}
+                    {ep.title}
+                  </span>
 
                   <span className="text-xs px-2 py-0.5 rounded bg-green-500/10 text-green-400">
                     {ep.method}
@@ -322,7 +315,7 @@ const Docs = () => {
               Code examples
             </Link>
             {/* Desktop Sidebar */}
-            <nav className="hidden lg:flex flex-col gap-2 mt-6">
+            <nav className="hidden lg:flex flex-col mt-2">
               {languages.map((lang) => (
                 <Link
                   to="/docs"
@@ -336,10 +329,13 @@ const Docs = () => {
                   text-neutral-500
                   hover:text-white
                   hover:bg-neutral-900
-                  transition cursor-pointer capitalize
+                  transition cursor-pointer 
                   "
                 >
-                  <span className="truncate">• {lang.title}</span>
+                  <span className="truncate capitalize flex justify-center items-center gap-1">
+                    <span className="font-extrabold text-lg">• </span>
+                    {lang.title}
+                  </span>
                 </Link>
               ))}
             </nav>
@@ -413,35 +409,22 @@ const Docs = () => {
           <div className="mt-18 lg:mt-0">
             <h1
               id="categories"
-              className="text-2xl text-neutral-400 font-light lg:pt-24 "
+              className="text-2xl text-neutral-400 font-light lg:pt-24 mb-12"
             >
               <span className="text-[#ff6044]">#</span> CATEGORIES LIST
             </h1>
 
-            {/* ROW 1 */}
-            <div className="w-full mx-auto max-w-5xl overflow-hidden relative">
-              <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-black to-transparent"></div>
-
-              <div className="marquee-inner flex min-w-[200%] pt-10 pb-5 gap-6">
-                {[...topCategories, ...topCategories].map((cat, i) => (
-                  <CategoryCard key={i} cat={cat} />
-                ))}
+            <div className="rounded-lg border border-neutral-800 overflow-hidden bg-neutral-950">
+              {/* Terminal header */}
+              <div className="flex items-center gap-2 px-4 py-2 mb-6 border-b border-neutral-800 bg-neutral-900">
+                <span className="w-3 h-3 rounded-full bg-red-500"></span>
+                <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
+                <span className="w-3 h-3 rounded-full bg-green-500"></span>
               </div>
 
-              <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-black to-transparent"></div>
-            </div>
-
-            {/* ROW 2 */}
-            <div className="w-full mx-auto max-w-5xl overflow-hidden relative">
-              <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-black to-transparent"></div>
-
-              <div className="marquee-inner marquee-reverse flex min-w-[200%] pt-5 pb-10 gap-6">
-                {[...bottomCategories, ...bottomCategories].map((cat, i) => (
-                  <CategoryCard key={i} cat={cat} />
-                ))}
-              </div>
-
-              <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-black to-transparent"></div>
+              <pre className="p-4 text-sm text-neutral-300 overflow-x-auto font-mono leading-relaxed">
+                {categoriesCode}
+              </pre>
             </div>
           </div>
 

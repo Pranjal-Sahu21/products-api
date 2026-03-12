@@ -216,7 +216,7 @@ func main() {
         <div id="go" className="pt-24 space-y-3">
           {/* Heading */}
           <div className="flex gap-1">
-            <span className="text-neutral-500 text-2xl font-extrabold">•</span>{" "}
+            <span className="text-neutral-500 text-2xl font-extrabold">•</span>
             <h2 className="text-xl text-white">Go</h2>
           </div>
           {/* Code Block */}
@@ -228,17 +228,20 @@ func main() {
                 <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
                 <span className="w-3 h-3 rounded-full bg-green-500"></span>
               </div>
+              <div className="flex items-center gap-4">
+                <span className="text-xs text-neutral-400">Go</span>
 
-              <button
-                onClick={() => copyCode(goCode, "go")}
-                className="text-xs text-neutral-400 hover:text-white border border-neutral-700 px-2 py-1 rounded"
-              >
-                {copied === "go" ? (
-                  <Check className="size-3 cursor-pointer" />
-                ) : (
-                  <Copy className="size-3 cursor-pointer" />
-                )}
-              </button>
+                <button
+                  onClick={() => copyCode(goCode, "go")}
+                  className="text-xs text-neutral-400 hover:text-white border border-neutral-700 px-2 py-1 rounded"
+                >
+                  {copied === "go" ? (
+                    <Check className="size-3 cursor-pointer" />
+                  ) : (
+                    <Copy className="size-3 cursor-pointer" />
+                  )}
+                </button>
+              </div>
             </div>
 
             {/* Code */}
