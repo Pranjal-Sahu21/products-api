@@ -402,7 +402,7 @@ const Docs = () => {
               <span className=" text-[#ff6044]">#</span> BASE URL
             </h1>
 
-            <div className="rounded-lg border border-neutral-800 overflow-hidden pb-12 bg-neutral-950">
+            <div className="rounded-lg border border-neutral-800 overflow-hidden pb-4 bg-neutral-950">
               {/* Terminal header */}
               <div className="flex items-center gap-2 px-4 py-2 mb-6 border-b border-neutral-800 bg-neutral-900">
                 <span className="w-3 h-3 rounded-full bg-red-500"></span>
@@ -413,7 +413,7 @@ const Docs = () => {
               {/* URL */}
               <a
                 href="https://dummistore-wuga.onrender.com"
-                className="block p-2 text-sm text-neutral-300 overflow-x-auto hover:underline cursor-pointer endpoint-path"
+                className="block p-4 text-sm text-neutral-300 overflow-x-auto hover:underline cursor-pointer endpoint-path"
               >
                 https://dummistore-wuga.onrender.com
               </a>
