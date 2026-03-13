@@ -191,7 +191,8 @@ const Docs = () => {
           backdrop-blur
           "
         >
-          <div className="lg:sticky lg:top-24 p-6">
+          {/* Normal Sidebar */}
+          <div className="[@media(max-height:720px)]:hidden lg:sticky lg:top-24 p-6">
             <Link
               to="/docs"
               onClick={() => scrollToSection("base-url")}
@@ -283,7 +284,72 @@ const Docs = () => {
               ))}
             </nav>
           </div>
+
+          {/* Compact Sidebar */}
+          <div className="hidden [@media(max-height:720px)]:block p-6">
+            {/* Headings Only */}
+            <nav className="flex flex-col items-start gap-6 text-sm text-neutral-400 mt-[5vh]">
+              <div className="text-white text-xl mb-2 tracking-widest">
+                CONTENT
+              </div>
+              <button
+                className="uppercase font-light tracking-widest"
+                onClick={() => {
+                  document
+                    .getElementById("base-url")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Base URL
+              </button>
+
+              <button
+                className="uppercase font-light tracking-widest"
+                onClick={() => {
+                  document
+                    .getElementById("response-format")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Response Format
+              </button>
+
+              <button
+                className="uppercase font-light tracking-widest"
+                onClick={() => {
+                  document
+                    .getElementById("categories")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Categories List
+              </button>
+
+              <button
+                className="uppercase font-light tracking-widest"
+                onClick={() => {
+                  document
+                    .getElementById("endpoints")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                API Endpoints
+              </button>
+
+              <button
+                className="uppercase font-light tracking-widest"
+                onClick={() => {
+                  document
+                    .getElementById("code-examples")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Code Examples
+              </button>
+            </nav>
+          </div>
         </aside>
+        
         {/* MOBILE SIDEBAR DRAWER */}
         <div
           className={`fixed top-0 left-0 h-full w-64 z-40 bg-neutral-950 text-neutral-400
